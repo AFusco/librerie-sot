@@ -27,6 +27,8 @@
 
 #include <stdio.h>
 #include <unistd.h>
+#include <errno.h>
+#include <string.h>
 
 /*
  * Imposta livelli di log
@@ -120,6 +122,9 @@ static const char* colors[] = { KNRM, KGRN, KBLU, KMAG, KCYN, KWHT };
 #else
 #define LOG_ERR(message, args...)
 #endif
+
+#define PERR(message, args...) \
+  LOG_C(ERROR_TAG, message ": %s", ## args, strerror(errno))
 
 
 #endif 
