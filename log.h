@@ -25,6 +25,9 @@
 #ifndef __LOGGER_H__
 #define __LOGGER_H__
 
+#include <stdio.h>
+#include <unistd.h>
+
 /*
  * Imposta livelli di log
  * Maggiore il livello, più il log sarà verbose
